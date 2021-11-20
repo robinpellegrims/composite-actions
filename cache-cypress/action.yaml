@@ -13,4 +13,4 @@ runs:
       uses: actions/cache@v2
       with:
         path: '~/.cache/Cypress'
-        key: ${{ runner.os }}-node-modules-${{ hashFiles(inputs.file-to-hash) }}
+        key: ${{ runner.os }}-cypress-cache-${{ hashFiles(inputs.file-to-hash) }}
