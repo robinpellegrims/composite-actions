@@ -1,4 +1,4 @@
-name: 'Cache Cypress'
+name: 'Cypress cache'
 description: 'Cache the Cypress cache folder'
 inputs:
   file-to-hash:

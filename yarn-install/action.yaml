@@ -1,4 +1,4 @@
-name: 'yarn install'
+name: 'Install dependencies with Yarn'
 description: 'Cache node_modules + the yarn store and install & execute yarn install'
 inputs:
   node-version:

@@ -1,4 +1,4 @@
-name: 'pnpm install'
+name: 'Install dependencies with Pnpm'
 description: 'Cache the pnpm store and install & execute pnpm install'
 inputs:
   pnpm-version:
