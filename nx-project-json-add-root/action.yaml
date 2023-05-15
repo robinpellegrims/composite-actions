@@ -3,10 +3,6 @@ description: 'fixes https://github.com/e-square-io/nx-github-actions/issues/53'
 runs:
   using: 'composite'
   steps:
-    - name: ⬇️ Checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
     - name: fix https://github.com/e-square-io/nx-github-actions/issues/53
       run: >
         addRoot() {
