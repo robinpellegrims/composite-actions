@@ -1,0 +1,20 @@
+name: 'Nx project.json add root property'
+description: 'fixes https://github.com/e-square-io/nx-github-actions/issues/53'
+runs:
+  using: 'composite'
+  steps:
+    - name: ⬇️ Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: fix https://github.com/e-square-io/nx-github-actions/issues/53
+      run: >
+        addRoot() {
+          ROOT_PATH=$(dirname "$1")
+          PROJECT_CONTENT=$(jq ". + {root: \"${ROOT_PATH}\"}" < "$1")
+          echo "$PROJECT_CONTENT" > "$1"
+        };
+        find apps -name project.json | while read file; do addRoot "$file"; done;
+        find libs -name project.json | while read file; do addRoot "$file"; done;
+        find tools -name project.json | while read file; do addRoot "$file"; done;
+      shell: bash
