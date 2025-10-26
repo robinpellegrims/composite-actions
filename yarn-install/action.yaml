@@ -14,12 +14,12 @@ runs:
   steps:
     - name: Cache node_modules
       id: cache-node-modules
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: '**/node_modules'
         key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
     - name: Install yarn and cache store
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
         cache: 'yarn'
